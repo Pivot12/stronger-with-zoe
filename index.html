@@ -217,7 +217,7 @@ a{color:var(--pink)}
 .toast{position:fixed;left:50%;transform:translateX(-50%);bottom:calc(var(--tab-h) + var(--sab) + 20px);background:var(--ink);color:var(--bg);padding:10px 16px;border-radius:999px;font-size:14px;font-weight:600;z-index:70;opacity:0;pointer-events:none;transition:opacity .25s;max-width:calc(100% - 36px);text-align:center}
 .toast.show{opacity:1}
 #player .toast{bottom:120px;background:#fff;color:#0E0E14}
-.p-milestone{position:absolute;left:50%;top:26%;transform:translate(-50%,-50%);z-index:5;background:rgba(14,14,20,.85);backdrop-filter:blur(8px);border:1px solid rgba(255,255,255,.15);padding:14px 22px;border-radius:18px;font-family:var(--head);font-weight:800;font-size:18px;text-align:center;pointer-events:none;opacity:0;transition:opacity .3s;max-width:88%}
+.p-milestone{position:absolute;left:50%;top:14%;transform:translate(-50%,-50%);z-index:5;background:rgba(14,14,20,.85);backdrop-filter:blur(8px);border:1px solid rgba(255,255,255,.15);padding:14px 22px;border-radius:18px;font-family:var(--head);font-weight:800;font-size:18px;text-align:center;pointer-events:none;opacity:0;transition:opacity .3s;max-width:88%}
 .p-milestone.show{opacity:1}
 
 /* TV mode: bigger type for AirPlay mirroring */
@@ -229,6 +229,7 @@ a{color:var(--pink)}
 #player.tv .p-kicker{font-size:clamp(13px,1.4vw,18px)}
 #player.tv .p-rest .cd{font-size:clamp(100px,18vw,200px)}
 @media (min-width:900px){
+  #player .p-milestone{left:31%;top:22%}
   #player .p-body{flex-direction:row;gap:24px;align-items:flex-start;padding:16px 28px 0}
   #player .p-video{flex:1 1 60%;max-height:none;aspect-ratio:16/9}
   #player .p-video.short{flex:0 0 auto;width:min(40%,420px)}
