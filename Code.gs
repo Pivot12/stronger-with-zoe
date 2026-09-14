@@ -102,5 +102,5 @@ function setupTriggers(){
   ScriptApp.getProjectTriggers().forEach(t=>ScriptApp.deleteTrigger(t));
   ScriptApp.newTrigger("sundayEmail").timeBased().onWeekDay(ScriptApp.WeekDay.SUNDAY).atHour(18).inTimezone(TZ).create();
   ScriptApp.newTrigger("fridayDigest").timeBased().onWeekDay(ScriptApp.WeekDay.FRIDAY).atHour(7).inTimezone(TZ).create();
-  Object.keys(TABS).forEach(sheet);
+  Object.keys(TABS).forEach(n=>sheet(n));
 }
