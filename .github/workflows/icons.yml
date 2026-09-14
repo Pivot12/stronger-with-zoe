@@ -1,0 +1,19 @@
+name: Generate icons
+on:
+  workflow_dispatch:
+  push:
+    paths: ["make_icons.py", ".github/workflows/icons.yml"]
+permissions:
+  contents: write
+jobs:
+  icons:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with: { python-version: "3.12" }
+      - run: pip install pillow && sudo apt-get install -y fonts-dejavu-core >/dev/null
+      - run: python make_icons.py
+      - run: |
+          git config user.name "icon-bot"; git config user.email "actions@github.com"
+          git add icon-*.png && (git commit -m "Generate PWA icons" && git push) || echo "no change"
